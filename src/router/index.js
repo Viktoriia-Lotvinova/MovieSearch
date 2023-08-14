@@ -11,7 +11,7 @@ const routes = [
       component: HomeView
   },
   {
-      path: '/details/:id',
+      path: '/movies/:id',
       component: DetailsView
   },
   {

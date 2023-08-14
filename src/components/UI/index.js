@@ -5,6 +5,7 @@ import MyRadio from "@/components/UI/MyRadio.vue";
 import MyObserver from "@/components/UI/MyObserver.vue";
 import MyToTop from "@/components/UI/MyToTop.vue";
 import MyH1Heading  from "@/components/UI/MyH1Heading.vue";
+import MyText  from "@/components/UI/MyText.vue";
 
 export default [
     MyButton,
@@ -13,5 +14,6 @@ export default [
     MyRadio,
     MyObserver,
     MyToTop,
-    MyH1Heading
+    MyH1Heading,
+    MyText
 ]

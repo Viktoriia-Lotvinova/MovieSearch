@@ -5,7 +5,7 @@
             <span>{{ date }}</span>
             <h3 class="movie__heading">{{ title }}</h3>
             <span>Score: {{ score }}</span>
-            <my-button class="movie__button">See Details</my-button>
+            <my-button class="movie__button" @click="$router.push(`movies/${ id }`)">See Details</my-button>
         </div>
     </el-col>
 </template>
@@ -13,6 +13,7 @@
 <script>
 export default {
     props:{
+        id: Number,
         path: String,
         date: String,
         title: String,

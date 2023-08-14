@@ -1,24 +1,42 @@
 <template>
     <div class="container movie-details__wrap">
         <el-row gutter="15">
-            <el-col :span="12"><img src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="poster" class="movie-details__img"></el-col>
+            <el-col :span="12"><img :src=" movieDetails.poster_path ? 'https://image.tmdb.org/t/p/w500/' +  movieDetails.poster_path  : 'https://img.freepik.com/premium-vector/movie-cinema-premiere-background_41737-251.jpg'" alt="poster" class="movie-details__img"></el-col>
             <el-col :span="12">
-                <h3 class="movie-details__heading">Barbie</h3>
-                <p><span class="movie-details__span">Tagline: </span>She's everything. He's just Ken.</p>
-                <p><span class="movie-details__span">Release date: </span>2023-07-19</p>
-                <p><span class="movie-details__span">Country: </span>United Kingdom</p>
-                <p><span class="movie-details__span">Genre: </span>Comedy</p>
-                <p><span class="movie-details__span">Rating: </span> 7.482</p>
-                <p><span class="movie-details__span">Description: </span>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
-                <my-button class="movie-details__button">Add to faivorites</my-button>
+                <h3 class="movie-details__heading">{{ movieDetails.title }}</h3>
+                <p><span class="movie-details__span">Tagline: </span> {{ movieDetails.tagline }} </p>
+                <p><span class="movie-details__span">Release date: </span> {{ movieDetails.release_date }} </p>
+                <p><span class="movie-details__span">Country: </span> <my-text v-for="country in movieDetails.production_countries"> {{ country.name }}</my-text> </p>
+                <p><span class="movie-details__span">Genre: </span> <my-text v-for="genre in movieDetails.genres"> {{ genre.name + " " }} </my-text></p>
+                <p><span class="movie-details__span">Rating: </span> {{ movieDetails.vote_average }}</p>
+                <p><span class="movie-details__span">Description: </span>{{ movieDetails.overview }}</p>
+                <my-button class="movie-details__button" @click="show">Add to faivorites</my-button>
             </el-col>
         </el-row>
     </div>
 </template>
 
 <script>
+import { useMoviesStore } from '../stores/movies';
+
 export default {
-    
+    data(){
+        return{
+            movieDetails: [],
+            store: useMoviesStore(),
+        }
+    },
+    mounted(){
+        fetch(`https://api.themoviedb.org/3/movie/${ this.$route.params.id }?language=en-US`, this.store.options)
+            .then(response => response.json())
+            .then(response => this.movieDetails = response)
+            .then(response => console.log(response))
+            .catch(err => console.error(err)); 
+    },
+    methods:{
+        
+    }
+
 }
 </script>
 

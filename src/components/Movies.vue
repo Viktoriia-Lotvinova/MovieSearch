@@ -9,7 +9,7 @@
         offer a comprehensive selection, there might be 
         instances where certain movies aren't currently accessible.
         We apologize for any inconvenience this may cause.</p>   
-        <MovieItem v-else v-for="movie in this.store.movies" :key="movie.id" :path="movie.poster_path" :date="movie.release_date" :title="movie.title" :score="movie.vote_average"/> 
+        <MovieItem v-else v-for="movie in this.store.movies" :key="movie.id" :id="movie.id" :path="movie.poster_path" :date="movie.release_date" :title="movie.title" :score="movie.vote_average"/> 
         </el-row>
     </div>
 </template>
