@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: inherit;
+    background-color: #D3F0F4;
+    padding: 0 10px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+a, button {
+    all: unset;
+    cursor: pointer;
+}
+
+
+:root {
+    --blue: #115;
+    --white: #ffffff;
+}
+  
+
+.container{
+    display: flex;
+    max-width:1040px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+
+/* font-family: 'Dela Gothic One', cursive;
+
+font-family: 'IBM Plex Sans', sans-serif;
+
+font-family: 'Inter', sans-serif;
+
+font-family: 'Kalam', cursive; */
