@@ -55,6 +55,17 @@ a, button {
     --white: #ffffff;
 }
   
+p {
+    color: #64898E;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
 
 .container{
     display: flex;
@@ -63,11 +74,13 @@ a, button {
     justify-content: space-between;
 }
 
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.5s ease;
+}
 
-/* font-family: 'Dela Gothic One', cursive;
-
-font-family: 'IBM Plex Sans', sans-serif;
-
-font-family: 'Inter', sans-serif;
-
-font-family: 'Kalam', cursive; */
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}

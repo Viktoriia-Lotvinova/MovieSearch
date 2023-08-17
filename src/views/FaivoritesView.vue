@@ -1,18 +1,18 @@
 <script>
 import Header from '../components/Header.vue';
+import Faivorites from '../components/Faivorites.vue';
 
-
-export default{
-components:{
-  Header,
- 
-},
+export default {
+    components: {
+        Header,
+        Faivorites
+    },
 }
 </script>
 
 <template>
- <Header></Header>
- <my-h1-heading>List of your faivorite movies</my-h1-heading>
+<Header></Header>
+<Faivorites></Faivorites>
 </template>
 
 <style>

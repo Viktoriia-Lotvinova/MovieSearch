@@ -1,9 +1,9 @@
 <template>
-    <slot></slot>
+<slot></slot>
 </template>
 
 <script>
 export default {
-   name:'my-text' 
+    name: 'my-text'
 }
 </script>
